@@ -1,0 +1,219 @@
+Notes: Javascript Basics
+
+HTML = HyperText Markup Language 
+
+<div> creates an empty box. 
+
+JavaScript Syntax:
+
+Variables and Simple Data 
+
+var firstName = "james"; //Creating a string variable 
+
+var age = 32; //Creating a variable for integers
+
+Every number is saved as 64-bit integers. 
+
+console.log(age) //output things on the console 
+
+Falsy in JavaScript:
+false
+0 (zero)
+"" (empty string)
+null
+undefined
+NaN
+
+Arrays:
+
+var skills = ["awesomeness", "programming"];
+
+skills.length //gives us the length of an array 
+
+$("#main").append(skills.length); //append the length of an array to the page 
+
+Incrementing the last number of the array:
+
+var sampleArray = [0, 0, 7];
+
+var incrementLastArrayElement = function(_array) {
+	var newArray = [];
+
+	var Num = _array.pop() + 1;
+	_array.push(Num);
+	newArray = _array;
+
+	return newArray;
+};
+
+console.log(incrementLastArrayElement(sampleArray));
+
+Objects
+
+No classes in JS!
+
+Classes are just objects in Javascript. 
+
+var myObj = {
+	"name" : "Winnie", 
+	"age" : 32
+};
+
+$("#main").append(bio.name);
+
+//Add properties to object 
+
+myObj.birthyear = "1992";
+//or
+myObj["birthyear"] = "1992";
+
+
+JSON - JavasScript Object Notation 
+
+var education = {
+	"schools": [
+	{
+		"name": "Mission High School", 
+		"city": "San Francisco, CA"
+	},
+	{"name": "UC Berkeley", 
+	"city": "Berkeley"}
+	]
+}
+
+DOM - Document Object Model 
+
+Browsers convert all of the HTML they receive into a JavaScript object called DOM. 
+
+
+document.getElementById("education").style.display = "none";
+
+document - refers to the web page in its current state
+getElementById(id) - a DOM manipulation method that will grab a single page element object with id given. 
+
+.style = the CSS style that will be modified by this piece of code. 
+
+.display = "none"
+Every page element has a display CSS property - controls how that page element interacts with others 
+
+"none" = removes the element entirely from the page 
+
+//Changing the background color to black 
+document.getElementById('workExperience').style.backgroundColor = 'black';
+
+//Replacing < and > from code using charactar entity references (&lt; and &gt;)
+
+
+example:
+
+var charEscape = function(_html) {
+    var newHTML = _html;
+
+    newHTML = _html.replace(/</g, "&lt;");
+    newHTML = newHTML.replace(/>/g, "&gt;");
+
+    return newHTML;
+};
+
+
+var weirdObject = {
+    "property": "Time for an astronomy lesson!",
+    "property1": "Cameron's minor in college was astronomy",
+    "property-2": "The 4 Galilean largest moons of Jupiter are:",
+    "property 3": "Io, Ganymede, Callisto, Europa",
+    "property$": "Saturn's moon Enceladus has liquid water ocean under its icy surface",
+    " property": "The Sun contains 99.87% of the mass of the entire solar system",
+    "property()": "There are 5 dwarf planets in our solar system:",
+    "property[]": "Pluto, Ceres, Eris, Haumea, Makemake",
+    "8property": "Mars has two tiny moons: Phobos and Deimos"
+};
+
+// Use console.log() to figure out if dot and/or bracket notation
+// will work to access the properties below. Mark true if you can use dot/bracket
+// notation to access the property, otherwise mark false.
+
+// For example, uncomment the line below to see if you can use dot notation to access `property1`.
+// console.log(weirdObject.property1);
+
+// I'll give you the first answer. The rest are set to false. Try out each property and
+// if you can use dot or bracket notation to access it, change the answer to true!
+
+// property
+var dotNotation0 = true;
+var bracketNotation0 = true;
+
+console.log(weirdObject.property);
+console.log(weirdObject["property"]);
+
+
+// property1
+var dotNotation1 = true;
+var bracketNotation1 = true;
+
+console.log(weirdObject.property1);
+console.log(weirdObject["property1"]);
+
+// property-2
+var dotNotation2 = false;
+var bracketNotation2 = true;
+
+console.log(weirdObject.property-2);
+console.log(weirdObject["property-2"]);
+
+// property 3
+var dotNotation3 = false;
+var bracketNotation3 = true;
+
+//console.log(weirdObject.property);
+console.log(weirdObject["property 3"]);
+
+// property$
+var dotNotation4 = true;
+var bracketNotation4 = true;
+
+console.log(weirdObject.property$);
+console.log(weirdObject["property$"]);
+
+// *space*property
+var dotNotation5 = false;
+var bracketNotation5 = true;
+
+console.log(weirdObject. property);
+console.log(weirdObject[" property"]);
+
+// property()
+var dotNotation6 = false;
+var bracketNotation6 = true;
+
+console.log(weirdObject["property()"]);
+
+// property[]
+var dotNotation7 = false;
+var bracketNotation7 = true;
+
+//console.log(weirdObject.property[]);
+console.log(weirdObject["property[]"]);
+
+// 8property
+var dotNotation8 = false;
+var bracketNotation8 = true;
+
+//console.log(weirdObject.8property);
+console.log(weirdObject["8property"]);
+
+
+Flow Control 
+Evaluators 
+<, >, <=, >=, === (strict equality), !=, == (loose equality)
+
+Functions 
+var myFunc = function(p1, p2)
+// or 
+function myFunc(p1, p2)
+
+
+Encapsulation 
+
+functions are objects 
+Objects can encapsulate functions as well 
+
